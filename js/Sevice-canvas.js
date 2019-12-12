@@ -7,7 +7,7 @@ var gIsMouseDown
 
 
 var gMemo = {
-    selectedImgId: 5,
+    selectedImgId: 0,
     selectedTxtIdx: 0,
     txts: [
         {
@@ -37,6 +37,13 @@ function createCanvas() {
     gCanvas = document.querySelector('#my-canvas');
     gCtx = gCanvas.getContext('2d')
 }
+function getCanvas(){
+    return gCanvas
+}
+
+
+
+
 function getContext() {
     return gCtx
 }
@@ -72,8 +79,12 @@ function getTxts() {
 function inputId(elInputId) {
     gMemo.selectedTxtIdx = elInputId
 }
-function getSelectedTxtIdx(){
+function getSelectedTxtIdx() {
     return gMemo.selectedTxtIdx
+}
+function setColor(color){
+    console.log(color)
+    gMemo.txts[gMemo.selectedTxtIdx].color = color
 }
 
 
@@ -96,17 +107,4 @@ function getSelectedTxtIdx(){
 
 
 
-
-// function createInput() {
-//
-//     var canvas = document.querySelector('.my-canvas')
-//     var input = document.createElement('input')
-//     input.setAttribute('class','add-text')
-//     input.setAttribute('type',"text")
-//     input.setAttribute('placeholder','add text')
-//     input.setAttribute('onkeyup','textLine()')
-//     canvas.appendChild(input);
-
-
-// }
 

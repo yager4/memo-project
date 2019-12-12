@@ -18,9 +18,9 @@
             <div class="container-list flex">
                 <ul class="flex clean-list align-center space-between list">
                     <li class="nav-list flex align-center justify-content" onclick="returnToGallery()"> gallery</li>
-                    <li class="nav-list flex align-center justify-content">                 
-                    <li class="nav-list flex align-center justify-content">             
-                    <li class="nav-list flex align-center justify-content"> 
+                    <li class="nav-list flex align-center justify-content">
+                    <li class="nav-list flex align-center justify-content">
+                    <li class="nav-list flex align-center justify-content">
                 </ul>
             </div>
         </div>
@@ -42,22 +42,23 @@
         <!-- <canvas id="my-canvas" width="600" height="400" onmousedown="onMouseDown(event)" onmouseup="onMouseUp()"
         onmousemove="onDrawOnCanvas(event)">
     </canvas> -->
-
         <div class="editor">
             <input class="add-text" type="text" placeholder='add text' onkeyup="textLine(this)" data-id="0"
                 onclick="inputId(0)">
             <input class="add-text" type="text" placeholder='add text' onkeyup="textLine(this)" data-id="1"
                 onclick="inputId(1)">
             <input type="range" min="10" max="100" value="25" class="slider" onchange="setSize(this.value)">
-            <div class="up-container flex ">
+            <div class="up-container flex justify-content space-around ">
                 <img class="up" onclick="moveUp()" src="../css-file/arrow-up-icon-png-17.jpg" alt="">
                 <img class="down" onclick="moveDown()" src="../css-file/down.png" alt="">
                 <div class="container-trash">
                     <img onclick="trach()" src="../css-file/trach.jpg" alt="">
                 </div>
 
+
+
             </div>
-            <div class="align-container  justify-content align-items flex">
+            <div class="align-container  justify-content align-items flex space-around">
 
                 <div class="align justify-content align-items" onclick="alignText('left')">
                     <img class="center-img" src="../css-file/align-to-left.png" alt="">
@@ -72,8 +73,23 @@
 
                 </div>
             </div>
+            <div class="flex justify-content">
+                <div class="color-picker flex justify-content">
+                    <div onclick="chooseColor('red')" class="color red"></div>
+                    <div onclick="chooseColor('blue')" class="color blue "></div>
+                    <div onclick="chooseColor('pink')" class="color pink"></div>
+                    <div onclick="chooseColor('yellow')" class="color yellow"></div>
+                    <div onclick="chooseColor('purple')" class="color purple"></div>
+                    <div onclick="chooseColor('orange')" class="color orange"></div>
+                    <div onclick="chooseColor('white')" class="color white"></div>
+                    <div onclick="chooseColor('black')" class="color black"></div>
+
+
+                </div>
+            </div>
 
         </div>
+
     </div>
 
 
@@ -81,7 +97,7 @@
 </body>
 <script src="../js/Service-gallery.js"></script>
 <script src="../js/controler-gallery.js"></script>
-<script src="../js/index.js"></script>
+<script src="../js/Sevice-canvas.js"></script>
 <script src="../js/controler canvas.js"></script>
 
 </html>

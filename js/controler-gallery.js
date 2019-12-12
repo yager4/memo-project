@@ -6,7 +6,6 @@ function renderGallery() {
 
     var memeImgs = getImgeMeme()
     
-    // < img class="up" onclick = "moveUp()" src = "../css-file/arrow-up-icon-png-17.jpg" alt = "" >
     var elTGallery = document.querySelector('.container-gallery');
 
     var gallery = memeImgs.map(function (img) {

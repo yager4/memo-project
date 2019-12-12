@@ -50,10 +50,10 @@ body {
 }
 
 .up-container {
-    background-color: #ffffff;
-    width: 39px;
+    background-color: #e3e3e3;
     height: 38px;
     border-radius: 50px;
+    margin-bottom: 10px;
 }
 
 .container-trash>img {
@@ -79,7 +79,6 @@ body {
     transition: opacity .2s;
 }
 
-
 .center-img {
     width: 26px;
     height: 26px;
@@ -92,7 +91,6 @@ body {
     background-color: #ffffff;
     display: flex;
 }
-
 
 .justify-content {
     justify-content: center;
@@ -110,8 +108,6 @@ body {
     margin: 5px;
 }
 
-
-
 .main-nav {
     /* Style for "Shape 1" */
     width: 100%;
@@ -119,18 +115,18 @@ body {
     background-color: #ff7f00;
     margin-bottom: 20px;
     height: 132px;
-
 }
 
 .center {
     align-items: center;
 }
 
-
-
-
 .space-between {
     justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around
 }
 
 .clean-list {
@@ -183,33 +179,79 @@ body {
 .nav-list {
     background-color: #ff7f00;
     width: 132px;
-    height: 114px;;
-    border: 1px olivedrab solid ;
+    height: 114px;
+    ;
+    border: 1px olivedrab solid;
 }
 
-
-.align-center{
+.align-center {
     align-items: center;
 }
 
-.flex-wrap{
+.flex-wrap {
     flex-wrap: wrap;
+}
 
-} 
-.containter-img{
+.containter-img {
     width: 100px;
     height: 100px;
     margin-left: 10px;
 }
-.container-gallery{
+
+.container-gallery {
     width: 80%;
     height: 500px;
-
 }
-.img-meme{
+
+.img-meme {
     width: 100px;
     height: 100px;
-   
 }
 
+/* .color-picker{
+    width: 30px;
+    height: 30px;
+    background-color: olivedrab;
 
+
+} */
+
+.color {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.color-picker {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.yellow {
+    background-color: pink;
+}
+.purple{
+    background-color: purple;
+}
+.orange{
+    background-color: orange;
+}
+.black{
+    background-color: black;
+}
+.white{
+    background-color: white;
+}
