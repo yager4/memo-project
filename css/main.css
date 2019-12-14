@@ -208,13 +208,9 @@ body {
     height: 100px;
 }
 
-/* .color-picker{
-    width: 30px;
-    height: 30px;
-    background-color: olivedrab;
-
-
-} */
+.column{
+    flex-direction: column;
+}
 
 .color {
     width: 100%;
@@ -222,11 +218,11 @@ body {
     background-color: white;
 }
 
-.color-picker {
+.color-picker-1 , .color-picker-2   {
     width: 150px;
-    height: 50px;
-    background-color: black;
+    height: 18px;
 }
+
 
 .red {
     background-color: red;
@@ -241,17 +237,36 @@ body {
 }
 
 .yellow {
-    background-color: pink;
+    background-color: yellow;
 }
-.purple{
+
+.purple {
     background-color: purple;
 }
-.orange{
+
+.orange {
     background-color: orange;
 }
-.black{
+
+.black {
     background-color: black;
 }
-.white{
+
+.white {
     background-color: white;
+}
+
+.container-colors:hover .color-picker-1  {
+    /* top margin is 25px
+    right margin is 50px
+    bottom margin is 75px
+    left margin is 100px */
+    margin-bottom: 30px;
+    transition:margin-bottom 2s;
+}
+
+.color-container{
+    width: 100%;
+    height: 71px;
+
 }
