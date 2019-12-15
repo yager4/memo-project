@@ -44,6 +44,4 @@ function setSizeImg(width, height) {
 
 function getSizeImg() {
     return gImgSize
-    
-
 }

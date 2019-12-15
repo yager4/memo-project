@@ -258,17 +258,12 @@ body * {
     background-color: white;
 }
 
-/* .container-colors {
-    background-color: beige;
-} */
+
 
 .container-colors:hover .color-picker-1, .container-colors:hover .color-picker-2 {
-    /* top margin is 25px
-    right margin is 50px
-    bottom margin is 75px
-    left margin is 100px */
+
     height: 40px;
-    transition: height 2s;
+    transition: height 0.5s;
 }
 
 .color-container {

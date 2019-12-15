@@ -39,7 +39,6 @@ function drawText(txt) {
 }
 
 function textLine(elInputTxt) {
-debugger
     if (gIsNextLine) { createTexts() }
     var ctx = getCtx()
     ctx.clearRect(0, 0, gCanvas.width, gCanvas.height);
@@ -62,6 +61,8 @@ function drawTexts() {
         drawText(txt)
     });
 }
+
+
 function moveUp() {
     let txt = getTxts()
     let index = getSelectedTxtIdx()
@@ -81,10 +82,6 @@ function moveDown() {
 function trach() {
     removeTxt()
     let inputs = document.querySelectorAll('.add-text')
-
-    // inputs.forEach(input => {
-    //     input.value = ''
-    // });
     drawImg()
     drawTexts()
 }
@@ -121,6 +118,27 @@ function selectFont() {
     drawImg()
     drawTexts()
 }
+function onMouseDown(event) {
+    debugger
+    if (isInTextArea(event)) {
+         gIsMouseDown = true 
+         setPevPosition(event.offsetX, event.offsetY)
+  
+        
+        }
+}
+function onMouseUp(event) {
+    gIsMouseDown = false
+}
+function onDrawOnCanvas(event) {
+
+    if (gIsMouseDown) {
+        setPosition(event.offsetX, event.offsetY)
+    }
+
+}
+
+
 
 
 

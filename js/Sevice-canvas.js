@@ -13,13 +13,15 @@ var gMemo = {
     txts: []
 }
 
-function createText(font = 'Impact', line = '', align = 'left', color = 'white', size = 40, x = 0, y = gOffsetY) {
+function createText(pevOffsetX, pevOffsetY, font = 'Impact', line = '', align = 'left', color = 'white', size = 40, x = 0, y = gOffsetY) {
     return {
         font,
         line,
         align,
         color,
         size,
+        pevOffsetX: (null | pevOffsetX),
+        pevOffsetY: (null | pevOffsetY),
         x,
         y
     }
@@ -32,7 +34,6 @@ function createTexts() {
 
 }
 function nextLine() {
-    debugger
     if (gMemo.txts.length === gMemo.selectedTxtIdx) {
         gMemo.selectedTxtIdx - 1
         return
@@ -61,7 +62,6 @@ function getCtx() {
     return gCtx
 }
 function setTextLine(text) {
-    debugger
     gMemo.txts[gMemo.selectedTxtIdx].line = text
 }
 function setSizeFont(elsizeFont) {
@@ -112,26 +112,7 @@ function isInTextArea(ev) {
     } else return false
 
 }
-function onMouseDown(event) {
-    if (isInTextArea(event)) { gIsMouseDown = true }
-}
-function onMouseUp(event) {
-    gIsMouseDown = false
-}
 
-
-
-function onDrawOnCanvas(event) {
-
-    if (gIsMouseDown) {
-
-        gMemo.txts[gMemo.selectedTxtIdx].x = event.offsetX
-        gMemo.txts[gMemo.selectedTxtIdx].y = event.offsetY
-        drawImg()
-        drawTexts()
-    }
-
-}
 function setFont(font) {
     gMemo.txts[gMemo.selectedTxtIdx].font = font
 }
@@ -145,7 +126,6 @@ function removeTxt() {
     gMemo.selectedTxtIdx = gMemo.txts.length - 1
 }
 function removeModel() {
-debugger
     gOffsetY = 60
     gMemo.txts.splice(0, gMemo.txts.length)
     gMemo.selectedTxtIdx = 0
@@ -155,6 +135,36 @@ debugger
 
 
 }
+function setPosition(offsetX, offsetY) {
+
+    let index = gMemo.selectedTxtIdx
+
+    if (gIsMouseDown) {
+        gMemo.txts[index].x += offsetX - gMemo.txts[index].pevOffsetX
+        gMemo.txts[index].y += offsetY - gMemo.txts[index].pevOffsetY
+        drawImg()
+        drawTexts()
+    }
+    setPevPosition(offsetX, offsetY)
+
+
+}
+
+
+function setPevPosition(offsetX, offsetY) {
+    gMemo.txts[gMemo.selectedTxtIdx].pevOffsetX = offsetX
+    gMemo.txts[gMemo.selectedTxtIdx].pevOffsetY = offsetY
+
+}
+// function setPosition(offsetX, offsetY) {
+//     debugger
+//     let index = gMemo.selectedTxtIdx
+
+//     gMemo.txts[index].x += offsetX - gMemo.txts[index].pevOffsetX
+//     gMemo.txts[index].y += offsetY - gMemo.txts[index].pevOffsetY
+//     drawImg()
+//     drawTexts()
+// }
 
 
 
