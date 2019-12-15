@@ -16,9 +16,13 @@ var gImgsMemes = [
     { id: 15, url: '../css-file/One-Does-Not-Simply.jpg', keywords: ['Furious'] },
     { id: 16, url: '../css-file/patrick.jpg', keywords: ['Furious'] },
     { id: 17, url: '../css-file/putin.jpg', keywords: ['Furious'] },
-    { id: 18, url: '../css-file/X-Everywhere.jpg', keywords: ['Furious'] }
-
+    { id: 18, url: '../css-file/X-Everywhere.jpg', keywords: ['Furious'] },
 ];
+
+gImgSize = {
+    width: 0,
+    height: 0
+}
 
 
 function getImgeMeme() {
@@ -32,5 +36,14 @@ function getImgUrl() {
     return img.url
 }
 
+function setSizeImg(width, height) {
+    gImgSize.width = width
+    gImgSize.height = height
 
-        
+}
+
+function getSizeImg() {
+    return gImgSize
+    
+
+}

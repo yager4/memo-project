@@ -2,50 +2,55 @@
 
 
 function startCreateCanvas() {
-    drawImg()
-
     let canvas = document.querySelector('.canvas-container')
     let gallery = document.querySelector('.container-gallery');
     canvas.style.display = 'flex'
     gallery.style.display = 'none'
 
 }
-
-function drawImg() {
-
-    let imgUrl = getImgUrl()
+function drawImg(elImg) {
+    if (elImg) { setSizeImg(elImg.naturalWidth, elImg.naturalHeight) }
     createCanvas()
+    let imgUrl = getImgUrl()
     // canvasSize(imgUrl)
-    var ctx = getContext()
+    var ctx = getCtx()
     var img = new Image()
     img.src = imgUrl
-    ctx.drawImage(img, 0, 0, 600, 400)
-
-
+    let sizeImg = getSizeImg()
+    ctx.drawImage(img, 0, 0, sizeImg.width, sizeImg.height)
 }
 function drawText(txt) {
-    let ctx = getContext()
+
+
+    let ctx = getCtx()
+
     ctx.save()
-    ctx.font = `${txt.size + 'px'} Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif`;
+    ctx.font = `${txt.size + 'px'} ${txt.font}`;
     ctx.fillStyle = txt.color
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
     ctx.fillText(txt.line, txt.x, txt.y);
     ctx.strokeText(txt.line, txt.x, txt.y);
+    let measure = ctx.measureText(txt.line)
+    txt.height = measure.actualBoundingBoxAscent
+    txt.width = measure.width
     ctx.restore()
+
 }
 
 function textLine(elInputTxt) {
-    var ctx = getContext()
+debugger
+    if (gIsNextLine) { createTexts() }
+    var ctx = getCtx()
     ctx.clearRect(0, 0, gCanvas.width, gCanvas.height);
     let canvas = getCanvas()
     let text = elInputTxt.value
-    let index = +elInputTxt.getAttribute('data-id')
-    setIndexToSelectedTxtIdx(index)
-    setTextLine(text, index)
+    setTextLine(text)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawTexts()
 }
 function setSize(elsize) {
-    let ctx = getContext()
+    let ctx = getCtx()
     setSizeFont(elsize)
     drawImg()
     drawTexts()
@@ -74,20 +79,14 @@ function moveDown() {
 
 }
 function trach() {
-    let ctx = getContext()
-    ctx.clearRect(0, 0, gCanvas.width, gCanvas.height);
-    let txts = getTxts()
-    txts.forEach(txt => {
-
-        txt.line = ''
-    });
+    removeTxt()
     let inputs = document.querySelectorAll('.add-text')
 
-    inputs.forEach(input => {
-        console.log('in')
-        input.value = ''
-    });
+    // inputs.forEach(input => {
+    //     input.value = ''
+    // });
     drawImg()
+    drawTexts()
 }
 function alignText(alignType) {
 
@@ -107,12 +106,24 @@ function alignText(alignType) {
     drawImg()
     drawTexts()
 }
-function chooseColor(colorStr) {
-  
+function chooseColor(elColor, colorStr) {
+    elColor.style.backgroundColor = '#CFCFCF'
     setColor(colorStr)
     drawImg()
     drawTexts()
+    setTimeout(() => {
+        elColor.style.backgroundColor = colorStr
+    }, 100);
 }
+function selectFont() {
+    let font = document.querySelector('.select-font').value
+    setFont(font)
+    drawImg()
+    drawTexts()
+}
+
+
+
 
 
 

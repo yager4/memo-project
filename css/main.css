@@ -6,6 +6,11 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: flex-start;
+    background-color: rgba(191, 195, 211, 0.734);
+}
+
+body * {
+    box-sizing: border-box;
 }
 
 .canvas-container {
@@ -15,7 +20,7 @@ body {
 
 .editor {
     background-color: #e3e3e3;
-    width: 200px;
+    width: 313px;
     margin-left: 10px;
 }
 
@@ -40,6 +45,7 @@ body {
     width: 39px;
     height: 38px;
     border-radius: 50px;
+    background-color: #ffffff;
 }
 
 .down {
@@ -47,6 +53,7 @@ body {
     height: 38px;
     border-radius: 50px;
     margin-left: 5px;
+    background-color: #e3e3e3;
 }
 
 .up-container {
@@ -70,7 +77,7 @@ body {
 
 .slider {
     -webkit-appearance: none;
-    width: 198px;
+    width: 100%;
     height: 25px;
     background: #d3d3d3;
     outline: none;
@@ -112,7 +119,7 @@ body {
     /* Style for "Shape 1" */
     width: 100%;
     height: 130px;
-    background-color: #ff7f00;
+    background-color: hsla(30, 14%, 29%, 0.653);
     margin-bottom: 20px;
     height: 132px;
 }
@@ -147,7 +154,6 @@ body {
 
 .icon-Blogin {
     /* Style for "Blogin." */
-    background-color: #ff7f00;
     width: 85px;
     height: 33px;
     color: #ffffff;
@@ -177,11 +183,8 @@ body {
 }
 
 .nav-list {
-    background-color: #ff7f00;
     width: 132px;
     height: 114px;
-    ;
-    border: 1px olivedrab solid;
 }
 
 .align-center {
@@ -208,7 +211,7 @@ body {
     height: 100px;
 }
 
-.column{
+.column {
     flex-direction: column;
 }
 
@@ -218,11 +221,10 @@ body {
     background-color: white;
 }
 
-.color-picker-1 , .color-picker-2   {
+.color-picker-1, .color-picker-2 {
     width: 150px;
     height: 18px;
 }
-
 
 .red {
     background-color: red;
@@ -256,17 +258,91 @@ body {
     background-color: white;
 }
 
-.container-colors:hover .color-picker-1  {
+/* .container-colors {
+    background-color: beige;
+} */
+
+.container-colors:hover .color-picker-1, .container-colors:hover .color-picker-2 {
     /* top margin is 25px
     right margin is 50px
     bottom margin is 75px
     left margin is 100px */
-    margin-bottom: 30px;
-    transition:margin-bottom 2s;
+    height: 40px;
+    transition: height 2s;
 }
 
-.color-container{
+.color-container {
     width: 100%;
     height: 71px;
+}
 
+.box select {
+    background-color: #0563af;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box select option {
+    padding: 30px;
+}
+
+.box {
+    background-color: black
+}
+
+.title-font {
+    background-color: white;
+}
+
+@media (max-width: 720px) {
+    body {
+        width: 111vw;
+    }
+    .container-gallery {
+        display: block;
+        width: 100%;
+    }
+    .img-meme {
+        width: 100%;
+        height: 424px;
+    }
+    .container-main {
+        width: 100%;
+    }
+    .containter-img {
+        width: 100%;
+        height: 424px;
+    }
+    .canvas-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+    .editor {
+        width: 100%;
+    }
+    .slider{
+        width: 100%;
+    }
+    .add-text{
+        width: 310px;
+        height: 51px;
+    }
+    .nav-list{
+        margin-left: 216px;
+    }
+}
+.next-line-button{
+    width: 113px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: azure;
 }
